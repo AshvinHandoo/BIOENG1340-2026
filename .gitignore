@@ -3,3 +3,7 @@
 
 # OS / editor cruft
 .DS_Store
+
+# Python virtual environments (do not commit — large, machine-specific)
+.venv/
+.venv-*/
