@@ -15,6 +15,8 @@ visualization tools (ITK-SNAP, ParaView).
 | [Week05](Week05/) | MR physics: Larmor, Bloch & slice selection | Gyromagnetic ratio, Bloch-equation relaxation ($T_1/T_2$), tumor-vs-normal contrast, and z-gradient slice selection. See [Week05/README.md](Week05/README.md). |
 | [Week06](Week06/) | MRI image formation quiz solutions | Worked answers on precession, FID, Bloch equations, relaxation, and slice selection. See [Week06/README.md](Week06/README.md). |
 | [Week07](Week07/) | Spatial localization, pulse sequences & k-space | Frequency/phase encoding, k-space & Radon reconstruction, gradient/spin echo, contrast (T1/T2/PD), and BOLD/fMRI. See [Week07/README.md](Week07/README.md). |
+| [Week08](Week08/) | X-ray & CT image formation | Beer–Lambert attenuation, energy/wavelength, beam hardening, and CT reconstruction via the Radon transform. See [Week08/README.md](Week08/README.md). |
+| [Project](Project/) | Team project topic discussions | Project framework, dataset sources, and the running record of team/topic discussions. See [Project/README.md](Project/README.md). |
 
 ## Working with the data
 
