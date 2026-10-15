@@ -7,3 +7,4 @@
 # Python virtual environments (do not commit — large, machine-specific)
 .venv/
 .venv-*/
+l2-week8.md
