@@ -16,6 +16,7 @@ visualization tools (ITK-SNAP, ParaView).
 | [Week06](Week06/) | MRI image formation quiz solutions | Worked answers on precession, FID, Bloch equations, relaxation, and slice selection. See [Week06/README.md](Week06/README.md). |
 | [Week07](Week07/) | Spatial localization, pulse sequences & k-space | Frequency/phase encoding, k-space & Radon reconstruction, gradient/spin echo, contrast (T1/T2/PD), and BOLD/fMRI. See [Week07/README.md](Week07/README.md). |
 | [Week08](Week08/) | X-ray & CT image formation | Beer–Lambert attenuation, energy/wavelength, beam hardening, CT reconstruction via the Radon transform, plus X-ray physics (polyenergetic spectra, ionization, half-value layer, mass attenuation) and Hounsfield units. See [Week08/README.md](Week08/README.md). |
+| [Week09](Week09/) | Algebraic CT reconstruction | Solving for the linear attenuation coefficients of a 4×4 image from pencil-beam Beer–Lambert projections: the ray/path-length system $A\boldsymbol\mu=\mathbf p$, rank & orientations, the null-space "ghost", least-squares vs ART/Kaczmarz, and Poisson noise. See [Week09/README.md](Week09/README.md). |
 | [Project](Project/) | Team project topic discussions | Project framework, dataset sources, and the running record of team/topic discussions. See [Project/README.md](Project/README.md). |
 
 ## Working with the data
