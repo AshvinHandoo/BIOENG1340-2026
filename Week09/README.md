@@ -1,21 +1,20 @@
-# Week 09 — Algebraic CT Reconstruction, Acquisition & Study Design
+# Week 09 — Algebraic CT Reconstruction & Study Design
 
 Topics: (1) reconstructing a hypothetical **4×4 attenuation image** (16 unknown $\mu$'s) from
 **pencil X-ray beam** projections, exactly as **Hounsfield's EMI scanner** did — each ray is one
 **Beer–Lambert equation**, and the stack of rays forms a linear system $A\,\boldsymbol\mu = \mathbf{p}$
-that we solve; (2) how real scanners **acquire** projections (CT **generations**, the **sinogram** /
-Radon transform, and **back-projection**); and (3) **cohort (sample) size determination** for a
-patient–control study.
+that we solve; and (2) **cohort (sample) size determination** for a patient–control study.
 
-> The **Fourier theory** (Parseval + the Fourier Slice Theorem) and the head-to-head **comparison of
-> reconstruction methods** (direct Fourier / FBP / algebraic) are in **[Week 10](../Week10/)**.
+> The CT **acquisition** material (scanner generations, the sinogram / Radon transform, and
+> back-projection), the **Fourier theory** (Parseval + the Fourier Slice Theorem), and the head-to-head
+> **comparison of reconstruction methods** (direct Fourier / FBP / algebraic) are all in
+> **[Week 10](../Week10/)**.
 
 ## Contents
 
 | File | Description |
 |------|-------------|
 | [AlgebraicReconstruction_4x4.ipynb](AlgebraicReconstruction_4x4.ipynb) | Runnable notes: pencil-beam Beer–Lambert equations, a worked **2×2 (4-unknown)** example solved by direct inverse and **OLS normal equations** $(A^\top A)^{-1}A^\top\mathbf b$, building the ray/path-length matrix $A$, rank deficiency of horizontal+vertical views, diagonal views to raise the rank, the leftover null-space **"ghost"**, direct **least-squares** and iterative **ART / Kaczmarz** reconstruction, and the effect of **Poisson photon noise** (dose vs quality). |
-| [CTScanners_Sinogram_BackProjection.ipynb](CTScanners_Sinogram_BackProjection.ipynb) | **CT scanner generations** (pencil → fan → ring → multi-slice → helical) and the **C-arm / fluoroscopy** dose motivation; the **sinogram** by **rotate-and-sum**; the **Radon transform** (a point → a sinusoid) and **Radon = Hough** line detection; and **back-projection** — the unfiltered **laminogram** halo vs the **ramp-filtered** FBP, and image build-up **sweep by sweep**. |
 | [CohortSizeDetermination.ipynb](CohortSizeDetermination.ipynb) | Sample-size / power analysis for a patient–control study: Type I/II errors ($\alpha,\beta$) and **power**, the four levers, **Cohen's $d$**, sample size for **two means** (with power curves) and **two proportions**, **unequal allocation** (more controls per case), a **Monte-Carlo** power check, and practical **dropout** and **multiple-testing** corrections. |
 
 ## Key concepts
@@ -38,19 +37,6 @@ patient–control study.
   update converge to the same image; ART is the historical EMI-scanner method.
 - **Noise & dose**: photon counts are Poisson, $I\sim\text{Poisson}(I_0e^{-p})$; lower incident flux
   $I_0$ (less dose) → noisier projections → worse reconstruction — the CT dose/quality trade-off.
-
-### CT acquisition, the sinogram & back-projection
-
-- **Scanner generations**: pencil-beam translate-rotate (1st) → fan beam + arc (3rd) → stationary
-  detector **ring** (4th) → **multi-slice** → **helical/spiral** — each cuts scan time and **dose**.
-- **Fluoroscopy / C-arm**: live intra-procedural X-ray with real **ionizing-dose** risk (radiation
-  burns); fusing with pre-op CT/SPECT reduces exposure.
-- **Sinogram**: projection = **sum of pixels along a direction**, computed by **rotate-and-sum**; stack
-  over angle = Radon space.
-- **Radon transform**: a point maps to a **sinusoid** (hence *sinogram*); for binary images it equals
-  the **Hough transform** → counting peaks counts **lines**.
-- **Back-projection**: unfiltered gives a **laminogram** with a $1/r$ **halo** (center of k-space
-  over-sampled); the **ramp filter** $|k|$ corrects it — and the image sharpens **sweep by sweep**.
 
 ### Cohort size determination
 
